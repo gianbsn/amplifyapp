@@ -54,6 +54,10 @@ function App() {
       query: deleteNoteMutation,
       variables: { input: { id } },
     });
+    if (formData.image) {
+      await Storage.remove(formData.image);
+    }
+    setFormData(initialFormState);
   }
 
   // this traps the event and  handles the image upload
