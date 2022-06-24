@@ -54,8 +54,9 @@ function App() {
       query: deleteNoteMutation,
       variables: { input: { id } },
     });
-    if (formData.image) {
-      await Storage.remove(formData.image);
+    // TODO: this is not working
+    if (formData.file.name) {
+      await Storage.remove(formData.file.name);
     }
     setFormData(initialFormState);
   }
